@@ -1,0 +1,2312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{001EA98D-7731-4FFC-A4A4-80C15B2C9A2C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RestDemo</RootNamespace>
+    <AssemblyName>RestDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\System.Management.Automation\1.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddRecord.cs" />
+    <Compile Include="AddZone.cs" />
+    <Compile Include="DeleteZone.cs" />
+    <Compile Include="DynApiWrapper.cs" />
+    <Compile Include="GetZone.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DynnetWSApi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Service References\DynnetWSApi\Dynect.wsdl" />
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateDDNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateDDNSResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateDNSSECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateDNSSECResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateFailoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateFailoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateGeoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateGeoResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateGSLBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateGSLBResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateIPTrackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateIPTrackResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateLoadBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateLoadBalanceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateRTTMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateRTTMResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateSecondaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ActivateSecondaryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddCustomerForbidsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddCustomerForbidsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddCustomerPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddCustomerPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddDDNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddDDNSResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddPermissionGroupPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddPermissionGroupPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddPermissionGroupSubgroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddPermissionGroupSubgroupsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddPermissionGroupUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddPermissionGroupUsersResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddPermissionGroupZonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddPermissionGroupZonesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddUserForbidsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddUserForbidsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddUserGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddUserGroupsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddUserPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddUserPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddUserZonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.AddUserZonesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.BlockUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.BlockUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CheckPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CheckPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateAAAARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateAAAARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateCDNManagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateCDNManagerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateCERTRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateCERTRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateCNAMERecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateCNAMERecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateContactResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateCustomerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDDNSHostResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDDNSHostResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDDNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDDNSResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDHCIDRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDHCIDRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDNAMERecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDNAMERecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDNSKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDNSKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDNSSECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDNSSECResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDSRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateDSRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateFailoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateFailoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGeoNodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGeoNodeResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGeoRegionGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGeoRegionGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGeoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGeoResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGSLBRegionPoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGSLBRegionPoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGSLBRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGSLBRegionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGSLBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateGSLBResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateHTTPRedirectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateHTTPRedirectResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateIPSECKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateIPSECKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateIPTrackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateIPTrackResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateKXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateKXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateLoadBalancePoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateLoadBalancePoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateLoadBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateLoadBalanceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateLOCRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateLOCRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateMXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateMXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateNAPTRRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateNAPTRRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateNSAPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateNSAPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateNSRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateNSRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreatePermissionGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreatePermissionGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreatePTRRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreatePTRRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreatePXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreatePXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateRPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateRPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateRTTMRegionPoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateRTTMRegionPoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateRTTMRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateRTTMRegionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateRTTMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateRTTMResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateSecondaryZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateSecondaryZoneResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateSPFRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateSPFRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateSRVRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateSRVRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateSSHFPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateSSHFPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateTSIGKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateTSIGKeyResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateTXTRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateTXTRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateUpdateUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateUpdateUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.CreateZoneResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateDDNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateDDNSResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateDNSSECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateDNSSECResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateFailoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateFailoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateGeoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateGeoResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateGSLBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateGSLBResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateIPTrackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateIPTrackResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateLoadBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateLoadBalanceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateRTTMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateRTTMResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateSecondaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeactivateSecondaryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteAAAARecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteAAAARecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteARecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteARecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteCERTRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteCERTRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteCNAMERecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteCNAMERecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteDHCIDRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteDHCIDRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteDNAMERecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteDNAMERecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteDNSKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteDNSKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteDSRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteDSRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteIPSECKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteIPSECKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteKXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteKXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteLOCRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteLOCRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteMXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteMXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteNAPTRRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteNAPTRRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteNSAPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteNSAPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteNSRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteNSRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneAAAARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneAAAARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneCDNManagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneCDNManagerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneCERTRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneCERTRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneCNAMERecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneCNAMERecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneContactResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneCustomerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDDNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDDNSResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDHCIDRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDHCIDRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDNAMERecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDNAMERecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDNSKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDNSKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDNSSECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDNSSECResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDSRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneDSRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneFailoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneFailoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGeoNodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGeoNodeResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGeoRegionGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGeoRegionGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGeoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGeoResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGSLBRegionPoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGSLBRegionPoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGSLBRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGSLBRegionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGSLBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneGSLBResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneHTTPRedirectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneHTTPRedirectResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneIPSECKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneIPSECKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneIPTrackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneIPTrackResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneKXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneKXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneLoadBalancePoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneLoadBalancePoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneLoadBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneLoadBalanceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneLOCRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneLOCRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneMXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneMXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneNAPTRRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneNAPTRRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneNSAPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneNSAPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneNSRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneNSRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOnePermissionGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOnePermissionGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOnePTRRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOnePTRRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOnePXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOnePXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneRPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneRPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneRTTMRegionPoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneRTTMRegionPoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneRTTMRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneRTTMRegionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneRTTMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneRTTMResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneSPFRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneSPFRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneSRVRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneSRVRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneSSHFPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneSSHFPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneTSIGKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneTSIGKeyResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneTXTRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneTXTRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteOneZoneResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeletePTRRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeletePTRRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeletePXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeletePXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteRPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteRPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteSPFRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteSPFRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteSRVRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteSRVRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteSSHFPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteSSHFPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteTXTRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteTXTRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteZoneChangesetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.DeleteZoneChangesetResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.FailoverCDNManagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.FailoverCDNManagerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.FreezeZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.FreezeZoneResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetAAAARecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetAAAARecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetAllRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetAllRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetANYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetANYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetARecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetARecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCDNManagersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCDNManagersResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCERTRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCERTRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCNAMERecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCNAMERecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetContactsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetContactsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCustomerPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCustomerPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCustomersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetCustomersResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDDNSsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDDNSsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDHCIDRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDHCIDRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDNAMERecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDNAMERecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDNSKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDNSKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDNSSECsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDNSSECsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDNSSECTimelineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDNSSECTimelineResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDSRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetDSRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetFailoversResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetFailoversResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGeoNodesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGeoNodesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGeoRegionGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGeoRegionGroupsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGeosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGeosResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGSLBRegionPoolEntriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGSLBRegionPoolEntriesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGSLBRegionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGSLBRegionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGSLBsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetGSLBsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetHTTPRedirectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetHTTPRedirectsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetIPSECKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetIPSECKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetIPTracksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetIPTracksResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetJobResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetKXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetKXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetLoadBalancePoolEntriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetLoadBalancePoolEntriesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetLoadBalancesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetLoadBalancesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetLOCRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetLOCRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetMXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetMXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetNAPTRRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetNAPTRRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetNodeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetNodeListResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetNSAPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetNSAPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetNSRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetNSRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneAAAARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneAAAARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneCDNManagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneCDNManagerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneCERTRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneCERTRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneCNAMERecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneCNAMERecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneContactResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneCustomerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDDNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDDNSResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDHCIDRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDHCIDRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDNAMERecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDNAMERecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDNSKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDNSKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDNSSECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDNSSECResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDSRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneDSRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneFailoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneFailoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGeoRegionGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGeoRegionGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGeoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGeoResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGSLBRegionPoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGSLBRegionPoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGSLBRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGSLBRegionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGSLBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneGSLBResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneHTTPRedirectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneHTTPRedirectResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneIPSECKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneIPSECKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneIPTrackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneIPTrackResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneKXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneKXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneLoadBalancePoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneLoadBalancePoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneLoadBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneLoadBalanceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneLOCRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneLOCRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneMXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneMXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneNAPTRRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneNAPTRRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneNSAPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneNSAPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneNSRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneNSRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOnePermissionGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOnePermissionGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOnePTRRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOnePTRRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOnePXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOnePXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneRPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneRPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneRTTMRegionPoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneRTTMRegionPoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneRTTMRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneRTTMRegionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneRTTMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneRTTMResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSecondaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSecondaryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSOARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSOARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSPFRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSPFRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSRVRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSRVRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSSHFPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneSSHFPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneTSIGKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneTSIGKeyResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneTXTRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneTXTRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetOneZoneResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetPermissionGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetPermissionGroupsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetPTRRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetPTRRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetPXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetPXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetQueryStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetQueryStatsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMLogsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMLogsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMRegionPoolEntriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMRegionPoolEntriesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMRegionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMRegionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMRRSetsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMRRSetsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetRTTMsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSecondariesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSecondariesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSOARecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSOARecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSPFRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSPFRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSRVRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSRVRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSSHFPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetSSHFPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetTSIGKeysResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetTSIGKeysResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetTXTRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetTXTRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetUpdateUserPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetUpdateUserPasswordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetUserPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetUserPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetUsersResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetZoneChangesetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetZoneChangesetResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetZoneNotesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetZoneNotesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetZonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.GetZonesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.PruneZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.PruneZoneResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.PublishZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.PublishZoneResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverCDNManagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverCDNManagerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverFailoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverFailoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverGSLBIPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverGSLBIPResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverGSLBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverGSLBResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverLoadBalanceIPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverLoadBalanceIPResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverLoadBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverLoadBalanceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverRTTMIPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverRTTMIPResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverRTTMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RecoverRTTMResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveCustomerForbidsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveCustomerForbidsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveCustomerPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveCustomerPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemovePermissionGroupPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemovePermissionGroupPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemovePermissionGroupSubgroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemovePermissionGroupSubgroupsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemovePermissionGroupUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemovePermissionGroupUsersResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemovePermissionGroupZonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemovePermissionGroupZonesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveUserForbidsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveUserForbidsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveUserGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveUserGroupsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveUserPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveUserPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveUserZonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RemoveUserZonesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceAAAARecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceAAAARecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceARecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceARecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceCERTRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceCERTRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceCNAMERecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceCNAMERecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceDHCIDRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceDHCIDRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceDNAMERecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceDNAMERecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceDNSKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceDNSKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceDSRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceDSRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceIPSECKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceIPSECKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceKEYRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceKEYRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceKXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceKXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceLOCRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceLOCRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceMXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceMXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceNAPTRRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceNAPTRRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceNSAPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceNSAPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceNSRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceNSRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplacePTRRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplacePTRRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplacePXRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplacePXRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceRPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceRPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceSPFRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceSPFRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceSRVRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceSRVRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceSSHFPRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceSSHFPRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceTXTRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ReplaceTXTRecordsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ResetDDNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ResetDDNSResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RetransferSecondaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.RetransferSecondaryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SessionIsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SessionIsAliveResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SessionKeepAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SessionKeepAliveResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SessionLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SessionLoginResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SessionLogoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SessionLogoutResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetCustomerForbidsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetCustomerForbidsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetCustomerPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetCustomerPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetPermissionGroupPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetPermissionGroupPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetPermissionGroupSubgroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetPermissionGroupSubgroupsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetPermissionGroupUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetPermissionGroupUsersResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetPermissionGroupZonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetPermissionGroupZonesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetUserForbidsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetUserForbidsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetUserGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetUserGroupsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetUserPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetUserPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetUserZonesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.SetUserZonesResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ThawZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.ThawZoneResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UnblockUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UnblockUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateAAAARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateAAAARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateCDNManagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateCDNManagerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateCERTRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateCERTRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateCNAMERecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateCNAMERecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateContactResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateCustomerResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDDNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDDNSResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDHCIDRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDHCIDRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDNAMERecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDNAMERecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDNSKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDNSKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDNSSECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDNSSECResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDSRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateDSRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateFailoverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateFailoverResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGeoRegionGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGeoRegionGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGeoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGeoResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGSLBRegionPoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGSLBRegionPoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGSLBRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGSLBRegionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGSLBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateGSLBResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateHTTPRedirectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateHTTPRedirectResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateIPSECKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateIPSECKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateIPTrackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateIPTrackResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateKEYRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateKEYRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateKXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateKXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateLoadBalancePoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateLoadBalancePoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateLoadBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateLoadBalanceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateLOCRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateLOCRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateMXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateMXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateNAPTRRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateNAPTRRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateNSAPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateNSAPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateNSRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateNSRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdatePermissionGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdatePermissionGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdatePTRRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdatePTRRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdatePXRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdatePXRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateRPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateRPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateRTTMRegionPoolEntryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateRTTMRegionPoolEntryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateRTTMRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateRTTMRegionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateRTTMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateRTTMResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSecondaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSecondaryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSOARecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSOARecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSPFRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSPFRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSRVRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSRVRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSSHFPRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateSSHFPRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateTSIGKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateTSIGKeyResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateTXTRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateTXTRecordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateUserPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateUserPasswordResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UpdateUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UploadZoneFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DynnetWSApi\RestDemo.DynnetWSApi.UploadZoneFileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DynnetWSApi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DynnetWSApi\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DynnetWSApi\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DynnetWSApi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestDemo", "RestDemo\RestDemo.csproj", "{001EA98D-7731-4FFC-A4A4-80C15B2C9A2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestDynnApiWrapper", "UnitTestDynnApiWrapper\UnitTestDynnApiWrapper.csproj", "{7A55FC71-D82E-48DB-AED3-A8F685049369}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{001EA98D-7731-4FFC-A4A4-80C15B2C9A2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{001EA98D-7731-4FFC-A4A4-80C15B2C9A2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{001EA98D-7731-4FFC-A4A4-80C15B2C9A2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{001EA98D-7731-4FFC-A4A4-80C15B2C9A2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A55FC71-D82E-48DB-AED3-A8F685049369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A55FC71-D82E-48DB-AED3-A8F685049369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A55FC71-D82E-48DB-AED3-A8F685049369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A55FC71-D82E-48DB-AED3-A8F685049369}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
