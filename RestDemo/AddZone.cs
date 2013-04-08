@@ -20,12 +20,18 @@ namespace RestDemo
         public string ZoneName { set; get; }
 
 
-        protected override void ProcessRecord()
+        protected override async void ProcessRecord()
         {
             DynApiWrapper wrapper = new DynApiWrapper();
             wrapper.Login();
 
-            if (ZoneName != string.Empty)
+            if (ZoneName.ToLower().CompareTo("all") == 0)
+            {
+                Task<bool> async = wrapper.AddZoneAsync();
+                bool ret = await async;
+                Console.WriteLine("Bulk Adding zoens async status:{0}", ret ? "done" : "failed");
+            }
+            else
             {
                 wrapper.AddZone(ZoneName);
                 wrapper.PublishZone(ZoneName);
