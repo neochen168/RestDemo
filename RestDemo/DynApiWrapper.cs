@@ -188,6 +188,71 @@ namespace RestDemo
             return response.data;
         }
 
+        public bool UpdateRecord(string type, string zoneName, string domainName, int ttl, string value)
+        {
+            switch (type.ToUpper())
+            {
+                case "A":
+                    DynnetWSApi.UpdateARecordRequestType Arequest = new DynnetWSApi.UpdateARecordRequestType();
+                    Arequest.token = token;
+                    Arequest.zone = zoneName;
+                    Arequest.fqdn = domainName;
+                    Arequest.ttl = ttl;
+                    Arequest.rdata = new DynnetWSApi.RDataA();
+                    Arequest.rdata.address = value;
+
+                    DynnetWSApi.UpdateARecordResponseType Aresponse = clientProxy.UpdateARecord(Arequest);
+
+                    Console.WriteLine(Aresponse.status);
+                    break;
+
+                case "AAAA":
+                    DynnetWSApi.UpdateAAAARecordRequestType AAAArequest = new DynnetWSApi.UpdateAAAARecordRequestType();
+                    AAAArequest.token = token;
+                    AAAArequest.zone = zoneName;
+                    AAAArequest.fqdn = domainName;
+                    AAAArequest.ttl = ttl;
+                    AAAArequest.rdata = new DynnetWSApi.RDataAAAA();
+                    AAAArequest.rdata.address = value;
+
+                    DynnetWSApi.UpdateAAAARecordResponseType AAAAresponse = clientProxy.UpdateAAAARecord(AAAArequest);
+
+                    Console.WriteLine(AAAAresponse.status);
+                    break;
+
+                case "CNAME":
+                    DynnetWSApi.UpdateCNAMERecordRequestType CNAMErequest = new DynnetWSApi.UpdateCNAMERecordRequestType();
+                    CNAMErequest.token = token;
+                    CNAMErequest.zone = zoneName;
+                    CNAMErequest.fqdn = domainName;
+                    CNAMErequest.ttl = ttl;
+                    CNAMErequest.rdata = new DynnetWSApi.RDataCNAME();
+                    CNAMErequest.rdata.cname = value;
+
+                    DynnetWSApi.UpdateCNAMERecordResponseType CNAMEresponse = clientProxy.UpdateCNAMERecord(CNAMErequest);
+
+                    Console.WriteLine(CNAMEresponse.status);
+                    break;
+
+                case "NS":
+                    DynnetWSApi.UpdateNSRecordRequestType NSrequest = new DynnetWSApi.UpdateNSRecordRequestType();
+                    NSrequest.token = token;
+                    NSrequest.zone = zoneName;
+                    NSrequest.fqdn = domainName;
+                    NSrequest.ttl = ttl;
+                    NSrequest.rdata = new DynnetWSApi.RDataNS();
+                    NSrequest.rdata.nsdname = value;
+
+                    DynnetWSApi.UpdateNSRecordResponseType NSresponse = clientProxy.UpdateNSRecord(NSrequest);
+
+                    Console.WriteLine(NSresponse.status);
+                    break;
+            }
+
+
+            return true;
+        }
+
         //public async Task<DynnetWSApi.ZoneData[]> GetZoneAsync()
         //{
         //    DynnetWSApi.GetZonesRequest request = new DynnetWSApi.GetZonesRequest();
